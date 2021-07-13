@@ -4,4 +4,3 @@ requests
 opencv-python
 Pillow
 numpy
-gevent
