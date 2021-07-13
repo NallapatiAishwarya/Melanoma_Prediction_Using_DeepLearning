@@ -3,8 +3,8 @@ The dataset used in this project is taken from Kaggle. You can access it from be
 https://www.kaggle.com/drscarlat/melanoma
 
 How to Run:
-1. Download the code in zip format (make sure you include git-lfs option in settings)
-2. Extract the files from zip 
+1. Download the code in zip format (make sure you include git-lfs option in settings).
+2. Extract the files from zip.
 3. Open command prompt in the same path where the files are extracted.
 4. Create environment using command 'py -m venv env'
 5. A folder named 'env' will be created in the Folder.
