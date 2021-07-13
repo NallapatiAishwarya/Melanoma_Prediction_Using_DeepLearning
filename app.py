@@ -46,7 +46,7 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/about.html', methods=['POST'])
+@app.route('/about.html')
 def about1():
         return render_template('about.html')
 
