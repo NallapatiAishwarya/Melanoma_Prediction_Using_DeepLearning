@@ -1,24 +1,16 @@
-from __future__ import division, print_function
-# coding=utf-8
-import sys
 import os
-import glob
-import re
 import numpy as np
 from PIL import Image as pil_image
 import cv2
 
-
 # Keras
 
-from tensorflow.keras.applications.imagenet_utils import preprocess_input, decode_predictions
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 
 # Flask utils
-from flask import Flask, redirect, url_for, request, render_template
+from flask import Flask, request, render_template
 from werkzeug.utils import secure_filename
-from gevent.pywsgi import WSGIServer
 
 app = Flask(__name__)
 
@@ -70,7 +62,6 @@ def upload():
         f = request.files['file']
 
         # Save the file to ./uploads
-        #basepath = r'C:\Users\DELL\OneDrive\Documents\melanoma dataset'
         file_path = os.path.join(
             './uploads/',secure_filename(f.filename))
         f.save(file_path)
@@ -79,12 +70,7 @@ def upload():
         preds = model_predict(file_path ,secure_filename(f.filename), Model)
 
         # Process your result for human
-        
-
-        #pred_class = preds.argmax(axis=-1)            # Simple argmax
-        #pred_class = decode_predictions(preds, top=1)   
-        #pr = lesion_classes_dict[pred_class[0]]
-        #result =str(pr)         
+            
         return str(preds)
     return None
 
