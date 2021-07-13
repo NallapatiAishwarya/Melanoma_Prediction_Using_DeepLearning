@@ -40,17 +40,17 @@ def model_predict(img_path,fname, Model):
     #class_name = classes[class_ind]
     return classes[int(result[0])]
 
-@app.route('/', methods=['GET','POST'])
+@app.route('/')
 def about():
     # Main page
     return render_template('about.html')
 
 
-@app.route('/about.html', methods=['GET','POST'])
+@app.route('/about.html', methods=['POST'])
 def about1():
         return render_template('about.html')
 
-@app.route('/index.html', methods=['GET','POST'])
+@app.route('/index.html')
 def index():
     # Main page
     return render_template('index.html')
