@@ -23,7 +23,7 @@ from gevent.pywsgi import WSGIServer
 app = Flask(__name__)
 
 
-Model= load_model(r'.\models\mel833.h5')     
+Model= load_model(r'.\models\model.h5')     
 Model.compile(loss = 'binary_crossentropy', optimizer = 'adam', metrics = ['accuracy'])
 classes = ['Melanoma','Not Melanoma']
 
